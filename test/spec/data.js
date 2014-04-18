@@ -1,4 +1,4 @@
-(function() {
+(function($) {
   'use strict';
   describe('jquip.data', function() {
     var el;
@@ -59,4 +59,4 @@
     });
 
   });
-}());
+}(jquip));

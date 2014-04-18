@@ -1,4 +1,4 @@
-(function(){
+(function($){
   describe('jquip.toggleClass', function() {
     var el;
     beforeEach(function() {
@@ -39,4 +39,4 @@
       expect(el.hasClass('zing')).toBe(true);
     });
   });
-}());
+}(jquip));

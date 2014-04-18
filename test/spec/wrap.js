@@ -1,4 +1,4 @@
-(function(){
+(function($){
   describe('jquip.wrap', function() {
     var el;
     beforeEach(function() {
@@ -58,4 +58,4 @@
       expect(clones[1].innerHTML).toBe('x')
     });
   });
-}());
+}(jquip));

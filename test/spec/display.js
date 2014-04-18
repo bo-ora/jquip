@@ -1,4 +1,4 @@
-(function() {
+(function($) {
   'use strict';
   describe('jquip.show and jquip.hide', function() {
     var el;
@@ -44,4 +44,4 @@
       expect(el.css('display')).toBe('inline-block');
     });
   });
-}());
+}(jquip));
