@@ -3,7 +3,7 @@
 
   describe('jquip.events', function() {
     var el;
-    beforeEach(function() { el = $('<div>').appendTo('body'); });
+    beforeEach(function() { el = $('<div contenteditable="true"></div>').appendTo('body'); });
     afterEach(function() { el.remove(); } );
 
     it('fires callbacks when events are triggered', function() {
@@ -49,6 +49,24 @@
         target.click();
         expect(spy).toHaveBeenCalled();
 
+      });
+
+      it('can subscribe to and trigger "focus", "blur" and "click" events', function() {
+        var spyFocus = jasmine.createSpy('cb'),
+            spyBlur = jasmine.createSpy('cb'),
+            spyClick = jasmine.createSpy('cb');
+
+        el.bind('click', spyClick);
+        el.bind('focus', spyFocus);
+        el.bind('blur', spyBlur);
+
+        el.trigger('click');
+        el.trigger('focus');
+        el.trigger('blur');
+
+        expect(spyClick).toHaveBeenCalled();
+        expect(spyFocus).toHaveBeenCalled();
+        expect(spyBlur).toHaveBeenCalled();
       });
     });
 
