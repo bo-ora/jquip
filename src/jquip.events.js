@@ -136,7 +136,7 @@
     };
       p['trigger'] = function (evt) {
           return this['each'](function () {
-              if ((evt == "click" || evt == "blur" || evt == "focus") && this[evt])
+              if ((evt == "click") && this[evt])
                   return this[evt]();
               if (doc.createEvent) {
                   var e = doc.createEvent('Events');
